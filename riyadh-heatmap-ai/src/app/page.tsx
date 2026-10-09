@@ -14,10 +14,10 @@ export default function Dashboard() {
   const [selectedFeature, setSelectedFeature] = useState<any>(null);
 
   const kpis = [
-    { title: "Current Hotspot Areas", value: "15", icon: <ThermometerSun className="w-5 h-5 text-red-500" /> },
-    { title: "High-Risk Zones", value: "4", icon: <AlertTriangle className="w-5 h-5 text-orange-500" /> },
-    { title: "Urban Expansion", value: "448.8 sq km", icon: <Building className="w-5 h-5 text-blue-500" />, sub: "2000-2024" },
-    { title: "Avg Surface Temp", value: "48.2 C", icon: <MapPin className="w-5 h-5 text-yellow-500" />, sub: "Summer Peak" },
+    { title: "مناطق البؤر الحرارية الحالية", value: "15", icon: <ThermometerSun className="w-5 h-5 text-red-500" /> },
+    { title: "مناطق عالية الخطورة", value: "4", icon: <AlertTriangle className="w-5 h-5 text-orange-500" /> },
+    { title: "التوسع العمراني", value: "448.8 كم مربع", icon: <Building className="w-5 h-5 text-blue-500" />, sub: "2000-2024" },
+    { title: "متوسط درجة حرارة السطح", value: "48.2 مئوية", icon: <MapPin className="w-5 h-5 text-yellow-500" />, sub: "ذروة الصيف" },
   ];
 
   return (
@@ -50,8 +50,8 @@ export default function Dashboard() {
 
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Riyadh Heat Risk Dashboard</h1>
-          <p className="text-slate-400 mt-1">Satellite-powered persistent hotspot detection & urban heat monitoring</p>
+          <h1 className="text-3xl font-bold tracking-tight">لوحة معلومات مخاطر الحرارة في الرياض</h1>
+          <p className="text-slate-400 mt-1">اكتشاف البؤر الحرارية المستمرة ومراقبة الحرارة الحضرية باستخدام الأقمار الصناعية</p>
         </div>
       </div>
 
@@ -79,52 +79,52 @@ export default function Dashboard() {
           {selectedFeature ? (
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-semibold">Hotspot {selectedFeature.properties.id}</h2>
+                <h2 className="text-xl font-semibold">بؤرة حرارية {selectedFeature.properties.id}</h2>
                 <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                   selectedFeature.properties.severity === 'CRITICAL' ? 'bg-red-900 text-red-200' :
                   selectedFeature.properties.severity === 'HIGH' ? 'bg-orange-900 text-orange-200' :
                   'bg-yellow-900 text-yellow-200'
                 }`}>
-                  {selectedFeature.properties.severity} RISK
+                  خطر {selectedFeature.properties.severity}
                 </span>
               </div>
               
               <div className="space-y-4">
                 <div className="bg-slate-800 rounded-lg p-4">
-                  <span className="text-sm text-slate-400 block mb-1">Temperature</span>
-                  <span className="text-2xl font-bold text-white">{selectedFeature.properties.temperature} C</span>
+                  <span className="text-sm text-slate-400 block mb-1">درجة الحرارة</span>
+                  <span className="text-2xl font-bold text-white">{selectedFeature.properties.temperature} مئوية</span>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-slate-800 rounded-lg p-4">
-                    <span className="text-sm text-slate-400 block mb-1">Built-up Surface</span>
+                    <span className="text-sm text-slate-400 block mb-1">السطح المبني</span>
                     <span className="text-xl font-bold text-slate-200">{selectedFeature.properties.builtUpPercent}%</span>
                   </div>
                   <div className="bg-slate-800 rounded-lg p-4">
-                    <span className="text-sm text-slate-400 block mb-1">Vegetation</span>
+                    <span className="text-sm text-slate-400 block mb-1">الغطاء النباتي</span>
                     <span className="text-xl font-bold text-slate-200">{selectedFeature.properties.vegPercent}%</span>
                   </div>
                 </div>
 
                 <div className="bg-slate-800 rounded-lg p-4 mt-4">
-                  <span className="text-sm text-slate-400 block mb-2">Persistence Score</span>
+                  <span className="text-sm text-slate-400 block mb-2">درجة الاستمرارية</span>
                   <div className="w-full bg-slate-700 rounded-full h-2.5 mb-1">
                     <div className="bg-red-500 h-2.5 rounded-full" style={{ width: `${selectedFeature.properties.persistenceScore}%` }}></div>
                   </div>
-                  <span className="text-xs text-slate-400">{selectedFeature.properties.persistenceScore}% recurrent in recent observations</span>
+                  <span className="text-xs text-slate-400">{selectedFeature.properties.persistenceScore}% متكررة في الملاحظات الأخيرة</span>
                 </div>
                 
                 <div className="bg-slate-800 rounded-lg p-4">
-                  <span className="text-sm text-slate-400 block mb-1">Why is this area hot?</span>
+                  <span className="text-sm text-slate-400 block mb-1">لماذا هذه المنطقة حارة؟</span>
                   <p className="text-sm text-slate-300">{selectedFeature.properties.reason}</p>
                 </div>
                 
                 <div className="bg-blue-900/30 border border-blue-900/50 rounded-lg p-4 mt-6">
-                  <span className="text-sm text-blue-400 block mb-2 font-semibold">Recommended Intervention</span>
+                  <span className="text-sm text-blue-400 block mb-2 font-semibold">التدخل الموصى به</span>
                   <ul className="text-sm text-slate-300 list-disc pl-4 space-y-1">
-                    <li>Increase green space allocation</li>
-                    <li>Introduce cool pavement materials</li>
-                    <li>Add shaded public areas</li>
+                    <li>زيادة تخصيص المساحات الخضراء</li>
+                    <li>إدخال مواد رصف باردة</li>
+                    <li>إضافة مناطق عامة مظللة</li>
                   </ul>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function Dashboard() {
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-slate-500 space-y-4 min-h-[400px]">
               <MapPin className="w-12 h-12 opacity-50" />
-              <p>Click on a hotspot on the map to view detailed analysis</p>
+              <p>انقر على بؤرة حرارية في الخريطة لعرض تحليل مفصل</p>
             </div>
           )}
         </div>

@@ -14,8 +14,7 @@ Riyadh experiences extreme summer temperatures exacerbated by rapid urban expans
 
 ## 3. Data Used
 - **Copernicus Sentinel-2:** Level-2A surface reflectance data used for high-resolution NDVI vegetation mapping. (Licence: Copernicus Open Access)
-- **Planet Tanager Hyperspectral:** urban and 
-atural-lands STAC collections used for detailed spectral analysis of built-up vs. natural areas. (Licence: Planet open data/Hackathon specific)
+- **Planet Tanager Hyperspectral:** urban and natural-lands STAC collections used for detailed spectral analysis of built-up vs. natural areas. (Licence: Planet open data/Hackathon specific)
 
 ## 4. Technical Approach
 1.  **Data Ingestion:** Fetch and clip Sentinel-2 and Planet Tanager scenes over Riyadh.
@@ -26,23 +25,23 @@ atural-lands STAC collections used for detailed spectral analysis of built-up vs
 ## 5. Installation
 Requires Python 3.11.
 
-\\\ash
+```bash
 git clone https://github.com/your-team/riyadh-heatmap-ai.git
 cd riyadh-heatmap-ai
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-\\\
+```
 
 ## 6. How to Run
-\\\ash
+```bash
 jupyter lab notebooks/02_main_analysis.ipynb
-\\\
+```
 Run all cells. The notebook will generate the required land use analysis. Expected runtime is approximately 3-4 minutes. At the end, it will produce an exported map showing the land cover changes and NDVI analysis.
 Note: You must set the Copernicus API keys as environment variables if fetching new data.
 
 ## 7. Example Input and Output
-- **Sample Input:** [\data/sample_input/example_scene.tif\](data/sample_input/example_scene.tif)
+- **Sample Input:** [data/sample_input/example_scene.tif](data/sample_input/example_scene.tif)
 - **Sample Output:**  
   ![Example Output](results/example_output.png)
 
@@ -52,6 +51,11 @@ Note: You must set the Copernicus API keys as environment variables if fetching 
 - **Limitations:** Cloud cover can obscure data points in certain months. High-resolution hyperspectral data availability is currently limited to specific swaths, requiring interpolation for city-wide maps.
 
 ## 9. Team, Licence and Attribution
-- **Team Members:** Developer, Data Scientist
+- **Team Members:** 
+Fatima alhaddad,Urban Planning Alternatives & Project Integration.
+Ghadeer almadhoob,Heat-Risk Modelling & Prediction.
+Hajar majeedi,GIS & Urban Expansion Analysis.
+Dana husain,Earth Observation & Data Acquisition.
+Jawad Alshakhahmed,AI & Machine Learning Specialist.
 - **Licence:** Apache 2.0
 - **Attribution:** Built using Copernicus Sentinel data and Planet Tanager STAC catalog. Map interface built with React-Leaflet.
