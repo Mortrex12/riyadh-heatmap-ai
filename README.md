@@ -52,10 +52,10 @@ Note: You must set the Copernicus API keys as environment variables if fetching 
 
 ## 9. Team, Licence and Attribution
 - **Team Members:** 
-Fatima alhaddad,Urban Planning Alternatives & Project Integration.
-Ghadeer almadhoob,Heat-Risk Modelling & Prediction.
-Hajar majeedi,GIS & Urban Expansion Analysis.
-Dana husain,Earth Observation & Data Acquisition.
-Jawad Alshakhahmed,AI & Machine Learning Specialist.
+  - **Fatima Alhaddad**, Urban Planning Alternatives & Project Integration.
+  - **Ghadeer Almadhoob**, Heat-Risk Modelling & Prediction.
+  - **Hajar Majeedi**, GIS & Urban Expansion Analysis.
+  - **Dana Husain**, Earth Observation & Data Acquisition.
+  - **Jawad Alshakhahmed**, AI & Machine Learning Specialist.
 - **Licence:** Apache 2.0
 - **Attribution:** Built using Copernicus Sentinel data and Planet Tanager STAC catalog. Map interface built with React-Leaflet.
