@@ -1,0 +1,19 @@
+{
+  "status": "connected",
+  "provider": "Copernicus Data Space Ecosystem (CDSE)",
+  "mission": "Sentinel-2 MSI (MultiSpectral Instrument)",
+  "instrument": "Level-2A Bottom of Atmosphere (BOA) Reflectance",
+  "region": "Riyadh, Kingdom of Saudi Arabia",
+  "bbox": [
+    46.5,
+    24.5,
+    46.9,
+    24.9
+  ],
+  "latestSceneId": "S2B_MSIL2A_20261008T071759_N0513_R006_T38RPN_20261008T111703.SAFE",
+  "acquisitionDatetime": "2026-10-08T07:32:58.357Z",
+  "cloudCoveragePercent": 0.17,
+  "lastSyncedAt": "2026-10-09T14:11:15.073179Z",
+  "rgbLayerUrl": "/satellite/riyadh_sentinel2_rgb.png",
+  "heatRiskLayerUrl": "/satellite/riyadh_sentinel2_ndvi_heat.png"
+}
