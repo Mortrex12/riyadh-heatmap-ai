@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Map, Activity, TrendingUp, ShieldAlert, BarChart3, Globe2 } from "lucide-react";
@@ -30,11 +30,7 @@ export default function Navbar() {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`inline-flex items-center px-3 py-2 text-sm font-medium border-b-2 transition-colors ${
-                    pathname === item.path
-                      ? "border-blue-500 text-blue-400"
-                      : "border-transparent text-slate-300 hover:text-white hover:border-slate-300"
-                  }`}
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium border-b-2 transition-colors"
                 >
                   {item.icon}
                   {item.name}

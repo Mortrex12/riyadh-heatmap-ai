@@ -1,11 +1,16 @@
 import json
+import sys
 import urllib.request
 import urllib.parse
 import os
 
 token_url = "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
-client_id = ""
-client_secret = ""
+client_id = os.environ.get("COPERNICUS_CLIENT_ID", "")
+client_secret = os.environ.get("COPERNICUS_CLIENT_SECRET", "")
+
+if not client_id or not client_secret:
+    print("Error: Please set COPERNICUS_CLIENT_ID and COPERNICUS_CLIENT_SECRET environment variables.")
+    sys.exit(1)
 
 data = urllib.parse.urlencode({
     "grant_type": "client_credentials",

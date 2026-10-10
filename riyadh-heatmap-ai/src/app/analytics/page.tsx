@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const landCover2000 = [
@@ -44,7 +44,7 @@ export default function Analytics() {
               <PieChart>
                 <Pie data={landCover2000} cx="50%" cy="50%" innerRadius={80} outerRadius={110} paddingAngle={5} dataKey="value">
                   {landCover2000.map((entry, index) => (
-                    <Cell key={"cell-" + index} fill={COLORS[index % COLORS.length]} />
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
                 <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155' }} />
@@ -62,7 +62,7 @@ export default function Analytics() {
               <PieChart>
                 <Pie data={landCover2024} cx="50%" cy="50%" innerRadius={80} outerRadius={110} paddingAngle={5} dataKey="value">
                   {landCover2024.map((entry, index) => (
-                    <Cell key={"cell-" + index} fill={COLORS[index % COLORS.length]} />
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
                 <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155' }} />

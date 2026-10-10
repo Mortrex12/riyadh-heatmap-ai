@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { ShieldAlert, Activity, Upload, BrainCircuit, CheckCircle2 } from "lucide-react";
@@ -88,9 +88,9 @@ export default function FutureRisk() {
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-400">Predicted Heat Risk</span>
                       <span className={`px-2 py-1 rounded text-xs font-bold ${
-                        selectedFeature.properties.predictedRisk === 'HIGH' ? 'bg-red-900 text-red-200' :
-                        selectedFeature.properties.predictedRisk === 'MEDIUM' ? 'bg-orange-900 text-orange-200' :
-                        'bg-green-900 text-green-200'
+                        selectedFeature.properties.predictedRisk === 'HIGH' ? 'bg-red-500/20 text-red-400' :
+                        selectedFeature.properties.predictedRisk === 'MODERATE' ? 'bg-orange-500/20 text-orange-400' :
+                        'bg-green-500/20 text-green-400'
                       }`}>
                         {selectedFeature.properties.predictedRisk}
                       </span>
@@ -103,7 +103,7 @@ export default function FutureRisk() {
                       <span className="text-2xl font-bold">{selectedFeature.properties.riskScore}/100</span>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
-                      <div className={`h-2 rounded-full ${selectedFeature.properties.riskScore > 75 ? 'bg-red-500' : selectedFeature.properties.riskScore > 50 ? 'bg-orange-500' : 'bg-green-500'}`} style={{ width: `${selectedFeature.properties.riskScore}%` }}></div>
+                      <div className="h-2 rounded-full bg-blue-500" style={{ width: `${selectedFeature.properties.riskScore}%` }}></div>
                     </div>
                     <span className="text-xs text-slate-500">Confidence: {selectedFeature.properties.confidence}%</span>
                   </div>
